@@ -154,6 +154,11 @@ namespace TripleSoftware.Sasl.Mechanism
 			return Convert.ToBase64String(encoder);
 		}
 		
+		/// <summary>
+		/// Responce of the sasl class to the challenge 
+		/// </summary>
+		/// <param name="Challenge">Server authentication Challenge</param>
+		/// <returns>Authentication hash</returns>
 		public override string GetResponse(string Challenge)
 		{
 			this.Challenge = Challenge;

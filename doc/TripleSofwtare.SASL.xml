@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TripleSofwtare.SASL</name>
+    </assembly>
+    <members>
+        <member name="T:TripleSoftware.Sasl.ISaslMechanism">
+            <summary>
+            ISaslMechanism interface.
+            Interface which exposes default methods for Sasl Mechanisms.
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.ISaslMechanism.GetResponse">
+            <summary>
+            Authentiction response
+            </summary>
+            <returns>Response hash</returns>
+        </member>
+        <member name="M:TripleSoftware.Sasl.ISaslMechanism.GetResponse(System.String)">
+            <summary>
+            Authentiction response
+            </summary>
+            <param name="Challenge">Server authentication Challenge</param>
+            <returns>Response hash</returns>
+        </member>
+        <member name="P:TripleSoftware.Sasl.ISaslMechanism.UserName">
+            <summary>
+            Username needed for authentication
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.ISaslMechanism.Password">
+            <summary>
+            Password needed to authentication
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.ISaslMechanism.Server">
+            <summary>
+            Server on which to authenticate
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.ISaslMechanism.Challenge">
+            <summary>
+            Server authentication Challenge
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.ISaslMechanism.DigestUri">
+            <summary>
+            Digest uri, example: XMPP/(server), SMTP/(server)
+            </summary>
+        </member>
+        <member name="T:TripleSoftware.Sasl.Mechanism.ASaslMechanism">
+            <summary>
+            Abstract class for use by sasl mechanisms
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.userName">
+            <summary>
+            Accounts UserName 
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.password">
+            <summary>
+            Account password
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.server">
+            <summary>
+            Server on which to authenticate
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.challenge">
+            <summary>
+            Challenge send by the server
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.treis">
+            <summary>
+            Number of treis to authenticate
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.realm">
+            <summary>
+            SASL realm
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.nonce">
+            <summary>
+            SASL nonce
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.qop">
+            <summary>
+            SASL qop
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.charset">
+            <summary>
+            SASL Character se
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.algorithm">
+            <summary>
+            SASL algorithm
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.rspauth">
+            <summary>
+            SASL rspauth
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.cnonce">
+            <summary>
+            SASL cnonce
+            </summary>
+        </member>
+        <member name="F:TripleSoftware.Sasl.Mechanism.ASaslMechanism.authzid">
+            <summary>
+            SASL authzid
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.ASaslMechanism.AddTry">
+            <summary>
+            Increase the number of tries
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.ASaslMechanism.GenerateString(System.Int32)">
+            <summary>
+            Generate a random string
+            </summary>
+            <param name="length">Length of the string</param>
+            <returns>Radom string</returns>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Parse(System.String)">
+            <summary>
+            parse the fileds form the decripted challenge
+            </summary>
+            <param name="challenge"></param>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.ASaslMechanism.GetResponse">
+            <summary>
+            Responce of the sasl class to the challenge 
+            </summary>
+            <returns>Authentication hash</returns>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.ASaslMechanism.GetResponse(System.String)">
+            <summary>
+            Responce of the sasl class to the challenge 
+            </summary>
+            <param name="Challenge">Server authentication Challenge</param>
+            <returns>Authentication hash</returns>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.ASaslMechanism.HexToString(System.Byte[])">
+            <summary>
+            Converts all bytes in the Array to a string representation.
+            </summary>
+            <param name="buf"></param>
+            <returns>string representation</returns>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.ASaslMechanism.AddQuotes(System.String)">
+            <summary>
+            Adds " to the begining and end of the string
+            </summary>
+            <param name="s"></param>
+            <returns>Quted string</returns>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.UserName">
+            <summary>
+            accounts UserName property
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Password">
+            <summary>
+            Accounts password property
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Server">
+            <summary>
+            Server on which to authenticate
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Challenge">
+            <summary>
+            Challeneg send by the server
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.NC">
+            <summary>
+            get the next nc
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.DigestUri">
+            <summary>
+            Get the digest-uri
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Realm">
+            <summary>
+            SASL Realm property
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Nonce">
+            <summary>
+            SASL Nonce property
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Qop">
+            <summary>
+            SASL Qop property
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Charset">
+            <summary>
+            SASL Character set property
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Algorithm">
+            <summary>
+            SASL encryption algorithm property
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Rspauth">
+            <summary>
+            SASL RspAuth property
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Cnonce">
+            <summary>
+            SASL Cnonce property
+            </summary>
+        </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Authzid">
+            <summary>
+            SASL Authzid property
+            </summary>
+        </member>
+        <member name="T:TripleSoftware.Sasl.Mechanism.DigestMD5SaslMechanism">
+            <summary>
+            SASL Digest-MD5 authentication Mechanism
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.DigestMD5SaslMechanism.UserAuthenticationHash">
+            <summary>
+            First stage of user authentication.
+            </summary>
+            <returns>user authenticate part</returns>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.DigestMD5SaslMechanism.UriAuthentication">
+            <summary>
+            Second stage of user Authentication.
+            </summary>
+            <returns>Uri authenticate part</returns>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.DigestMD5SaslMechanism.GetResponse">
+            <summary>
+            Respond to the servers sasl challenge with a MD5
+            </summary>
+            <returns>Response on the servers sasl challenge</returns>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.DigestMD5SaslMechanism.GetResponse(System.String)">
+            <summary>
+            Responce of the sasl class to the challenge 
+            </summary>
+            <param name="Challenge">Server authentication Challenge</param>
+            <returns>Authentication hash</returns>
+        </member>
+        <member name="T:TripleSoftware.Sasl.Mechanism.PlainSaslMechanism">
+            <summary>
+            Plain unencrypted SASL authentication method 
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.PlainSaslMechanism.GetResponse">
+            <summary>
+            Plain method authentication
+            </summary>
+            <returns>unencrypted users authentication</returns>
+        </member>
+        <member name="M:TripleSoftware.Sasl.Mechanism.PlainSaslMechanism.GetResponse(System.String)">
+            <summary>
+            Plain method authentication
+            </summary>
+            <param name="Challenge">Plain does not supprt challenge, this will be ignored</param>
+            <returns>unencrypted users authentication</returns>
+        </member>
+        <member name="T:TripleSoftware.Sasl.SaslMechanismNotAvailableException">
+            <summary>
+            Exception to throw when the factory tries to make a sasl mechanism which in not available
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.SaslMechanismNotAvailableException.#ctor(System.String)">
+            <summary>
+            Exception to throw when the factory tries to make a sasl mechanism which in not available
+            </summary>
+        </member>
+        <member name="T:TripleSoftware.Sasl.SaslFactory">
+            <summary>
+            Factory class that makes sasl Iathenticator classes.
+            Also check wether sasl mechanism is supported
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.SaslFactory.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.SaslFactory.HasSupport(System.String)">
+            <summary>
+            Check wether we have support for this sasl type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TripleSoftware.Sasl.SaslFactory.Make(System.String)">
+            <summary>
+            Let the factory maken a new mecahnism by its name
+            </summary>
+            <param name="mechanism">Sasl mechanism name to make</param>
+            <returns>Instants of the sasl mechanism</returns>
+        </member>
+    </members>
+</doc>

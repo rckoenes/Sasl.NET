@@ -10,6 +10,9 @@ namespace TripleSoftware.Sasl
 	/// Exception to throw when the factory tries to make a sasl mechanism which in not available
 	/// </summary>
 	public class SaslMechanismNotAvailableException : Exception{
+		/// <summary>
+		/// Exception to throw when the factory tries to make a sasl mechanism which in not available
+		/// </summary>
 		public SaslMechanismNotAvailableException( string message) : base(message) {}
 	}
 	
