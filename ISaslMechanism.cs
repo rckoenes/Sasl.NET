@@ -30,7 +30,7 @@ namespace TripleSoftware.Sasl
 		/// <summary>
 		/// Digest uri, example: XMPP/(server), SMTP/(server)
 		/// </summary>
-		string DigestUri{get; set;}
+		string Protocol{get; set;}
 		
 		/// <summary>
 		/// Authentiction response

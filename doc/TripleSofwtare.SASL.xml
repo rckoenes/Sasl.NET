@@ -43,7 +43,7 @@
             Server authentication Challenge
             </summary>
         </member>
-        <member name="P:TripleSoftware.Sasl.ISaslMechanism.DigestUri">
+        <member name="P:TripleSoftware.Sasl.ISaslMechanism.Protocol">
             <summary>
             Digest uri, example: XMPP/(server), SMTP/(server)
             </summary>
@@ -188,9 +188,14 @@
             get the next nc
             </summary>
         </member>
+        <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Protocol">
+            <summary>
+            Get the protocol, LDAP, SMTP, XMPP, ...
+            </summary>
+        </member>
         <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.DigestUri">
             <summary>
-            Get the digest-uri
+            Get the digest uri
             </summary>
         </member>
         <member name="P:TripleSoftware.Sasl.Mechanism.ASaslMechanism.Realm">
@@ -314,6 +319,31 @@
             </summary>
             <param name="mechanism">Sasl mechanism name to make</param>
             <returns>Instants of the sasl mechanism</returns>
+        </member>
+        <member name="T:TripleSoftware.Sasl.UnitTests.SaslTest">
+            <summary>
+            Test class for Sasl methods
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.UnitTests.SaslTest.testDigestMD5Mechanism">
+            <summary>
+            digest-MD5 TEst
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.UnitTests.SaslTest.testPlainMechanism">
+            <summary>
+            Plain mechanism test
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.UnitTests.SaslTest.testSaslFactory">
+            <summary>
+            Factory classs creation test
+            </summary>
+        </member>
+        <member name="M:TripleSoftware.Sasl.UnitTests.SaslTest.testErrorSaslFactory">
+            <summary>
+            test The error hendling by the factory
+            </summary>
         </member>
     </members>
 </doc>

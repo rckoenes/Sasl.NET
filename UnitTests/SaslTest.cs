@@ -21,8 +21,12 @@ namespace TripleSoftware.Sasl.UnitTests
 		private static string response = "dXNlcm5hbWU9InR1eDJrIixyZWFsbT0iIixub25jZT0iMTIyMDE5MzI4MSIsY25vbmNlPSJlNDMwOTIzMzdhNmY5OTljZTlmNzE3OTU5NGI4NmM3MDA2ZTJlMWNiIixuYz0wMDAwMDAwMSxxb3A9YXV0aCxkaWdlc3QtdXJpPSJ4bXBwL2phYmJlci54czRhbGwubmwiLGNoYXJzZXQ9dXRmLTgscmVzcG9uc2U9ZjM2NTMwZmI1YzI0ZTRkZDYxY2U1MzZmMTFlZjk1ODU=";
 		private static string plainResponse = "AHR1eDJrAHRlc3Q=";
 
+		
+		/// <summary>
+		/// digest-MD5 TEst
+		/// </summary>
 		[Test]
-		public void testMD5Mechanism()
+		public void testDigestMD5Mechanism()
 		{
 			try
 			{
@@ -31,7 +35,7 @@ namespace TripleSoftware.Sasl.UnitTests
 				mechanism.UserName = username;
 				mechanism.Server = server;
 				mechanism.Challenge = challenge;
-				mechanism.DigestUri = "xmpp/"+server;
+				mechanism.Protocol = "xmpp";
 				Assert.AreEqual(response, mechanism.GetResponse());
 			}
 			catch (Exception e)
@@ -40,6 +44,10 @@ namespace TripleSoftware.Sasl.UnitTests
 			}
 		}
 
+		
+		/// <summary>
+		/// Plain mechanism test
+		/// </summary>
 		[Test]
 		public void testPlainMechanism()
 		{
@@ -59,6 +67,9 @@ namespace TripleSoftware.Sasl.UnitTests
 			}
 		}
 		
+		/// <summary>
+		/// Factory classs creation test
+		/// </summary>
 		[Test]
 		public void testSaslFactory(){
 			SaslFactory saslFactory = new SaslFactory();
@@ -66,11 +77,14 @@ namespace TripleSoftware.Sasl.UnitTests
 			mechanism.Password = password;
 			mechanism.UserName = username;
 			mechanism.Server = server;
-			mechanism.DigestUri = "xmpp/"+server;
+			mechanism.Protocol = "xmpp";
 			mechanism.Challenge = challenge;
 			Assert.AreEqual(response, mechanism.GetResponse());
 		}
 		
+		/// <summary>
+		/// test The error hendling by the factory
+		/// </summary>
 		[Test]
 		public void testErrorSaslFactory(){
 			bool fail = false;

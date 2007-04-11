@@ -26,7 +26,7 @@ namespace TripleSoftware.Sasl.Mechanism
 		/// </summary>
 		private string challenge = "";
 		
-		private string digestUri = "";
+		private string protocol = "";
 		
 		/// <summary>
 		/// Number of treis to authenticate
@@ -117,12 +117,19 @@ namespace TripleSoftware.Sasl.Mechanism
 		}
 
 		/// <summary>
-		/// Get the digest-uri
+		/// Get the protocol, LDAP, SMTP, XMPP, ...
 		/// </summary>
-		public string DigestUri
+		public string Protocol
 		{
-			get { return this.digestUri; }
-			set { this.digestUri = value; }
+			get { return this.protocol; }
+			set { this.protocol = value; }
+		}
+		
+		/// <summary>
+		/// Get the digest uri
+		/// </summary>
+		public string DigestUri{
+			get{ return this.protocol+"/"+ this.server;}
 		}
 
 		/// <summary>
