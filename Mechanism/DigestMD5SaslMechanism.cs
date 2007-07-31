@@ -101,8 +101,8 @@ namespace TripleSoftware.Sasl.Mechanism
 			response.Append(":");
 			response.Append(HexToString(UriAuthentication()).ToLower());
 
-
-			byte[] hash = MD5.ComputeHash(Encoding.Default.GetBytes(response.ToString()));
+			byte[] toHash = Encoding.Default.GetBytes(response.ToString());
+			byte[] hash = MD5.ComputeHash(toHash);
 
 			return HexToString(hash).ToLower();
 		}
@@ -118,9 +118,9 @@ namespace TripleSoftware.Sasl.Mechanism
 #if ( DEBUG )
 			this.Cnonce = "e43092337a6f999ce9f7179594b86c7006e2e1cb";
 #else
+			// 32 should be unique 
 			this.Cnonce = GenerateString(32);
 #endif
-
 			result.Append("username=");
 			result.Append(AddQuotes(UserName));
 			result.Append(",");
@@ -147,7 +147,6 @@ namespace TripleSoftware.Sasl.Mechanism
 			result.Append(",");
 			result.Append("response=");
 			result.Append(this.Response());
-			this.Response();
 
 			byte[] encoder = Encoding.Default.GetBytes(result.ToString());
 
@@ -164,7 +163,5 @@ namespace TripleSoftware.Sasl.Mechanism
 			this.Challenge = Challenge;
 			return this.Response();
 		}
-
-
 	}
 }
