@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>TripleSofwtare.SASL</name>
+        <name>TripleSoftware.SASL</name>
     </assembly>
     <members>
         <member name="T:TripleSoftware.Sasl.ISaslMechanism">
